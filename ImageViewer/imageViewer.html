@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.01 Transitional//EN' 'http://www.w3.org/TR/html4/loose.dtd'>
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=utf8'>
+<link rel="stylesheet" href="styles.css" type="text/css" />
+<title>Просмотрщик изображений на javascript</title>
+</head>
+<body>
+<div class="descr">Просмоторщик изображений на веб-странице с возможностью изменения масштаба и загрузки изображений.<BR/><BR/> Перебирать изображения можно, нажимая
+на кнопки "Предыдущая" и "Следующая", или на стрелочки, которые появляются при наведении мыши на картинку. <BR/><BR/>Для загрузки новых картинок выбираем один или
+несколько файлов, нажав кнопку "Выбор файлов" (текст может отличаться в зависимости от вашего браузера)<BR/><BR/>Изменить масштаб картинки можно прокручивая колесико мыши или нажимая на соответствующие кнопки.</div>
+	<input type='file' id="files" name="files[]" style="margin-left: 50px;" accept = "image/jpeg" multiple />
+	<a style="float: right; margin-right: 50px;" class="myButton"  onclick="resize(0)">Восстановить масштаб</a>
+	<div class="scroller">
+	<div onMouseOver="btn_show()" onMouseOut="btn_hide()" class="wrapper" id="viewer">
+		<script src="viewer.js"></script>
+		<!-- Стрелочка влево -->
+		<div id="left" onclick="image(0)" class="left_right"><img src="left_arrow.png"></div>
+		<!-- Стрелочка вправо -->
+		<div id="right" onclick="image(1)" class="left_right" style="margin-left: 730px; position: absolute; display: none;"><img src="right_arrow.png"></div>
+	</div>
+	</div>
+	<center><p style="font-size: 18px;color: #333;font-weight: bold;" id="num_img">.</p></center>
+	<center><span class="myButton" onclick="image(0)">Предыдущая</span>
+	<span class="myButton" onclick="resize(-1)">Уменьшить</span>
+	<span class="myButton" onclick="resize(1)">Увеличить</span>
+	<span class="myButton"  onclick="image(1)">Следующая</span>
+	</center>
+</body>
+</html>
